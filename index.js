@@ -49,7 +49,7 @@ async function go() {
   var outputFile = `${outputFolder}/${toolkit}.engine.enterprise.js`
 
   if (isAll) {
-    var compress = false
+    var compress = true
     if (compress == true) {
       console.log(`${chalk.green("Step 4:")} uglify ${inputFile}`)
       var uglify = require("uglify-js");

@@ -43,7 +43,7 @@
         and
           concatenate
           -j=ES5
-          ext-classic-runtime-graphite/classic.engine.enterprise.uncompressed.js
+          ext-classic-runtime-triton/classic.engine.enterprise.uncompressed.js
         and
           exclude
           -all
@@ -64,22 +64,22 @@
           concatenate
           -j=ES5
           -strip
-          ext-classic-runtime-graphite/classic.engine.enterprise.uncompressed.js
+          ext-classic-runtime-triton/classic.engine.enterprise.uncompressed.js
         and
           scss
           -appName=App
-          -imageSearchPath=runtime-classic/graphite/resources
+          -imageSearchPath=runtime-classic/triton/resources
           -themeName=theme
           -resourceMapBase=.
-          -output=ext-classic-runtime-graphite/graphite/graphite-all.scss
+          -output=ext-classic-runtime-triton/triton/triton-all.scss
         and
           resources
           -excludes=-all*.css
-          -out=ext-classic-runtime-graphite/graphite
+          -out=ext-classic-runtime-triton/triton
         and
           resources
           -model=true
-          -out=ext-classic-runtime-graphite/graphite
+          -out=ext-classic-runtime-triton/triton
       ]]>
     </x-compile>
   </target>
@@ -92,8 +92,8 @@
           -pwd=.
           -split=4095
           -compress
-          ext-classic-runtime-graphite/graphite/graphite-all.scss
-          ext-classic-runtime-graphite/graphite/graphite-all.css
+          ext-classic-runtime-triton/triton/triton-all.scss
+          ext-classic-runtime-triton/triton/triton-all.css
       ]]>
     </x-sencha-command>
   </target>
@@ -101,8 +101,8 @@
   <target name="watch" depends="init-cmd,build">
     <x-fashion-watch
       refName="fashion-watch"
-      inputFile="ext-classic-runtime-graphite/graphite/graphite-all.scss"
-      outputFile="ext-classic-runtime-graphite/graphite/graphite-all.css"
+      inputFile="ext-classic-runtime-triton/triton/triton-all.scss"
+      outputFile="ext-classic-runtime-triton/triton/triton-all.css"
       split="4095"
       compress="false"
       configFile="app.json"

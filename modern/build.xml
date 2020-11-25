@@ -43,7 +43,7 @@
         and
           concatenate
           -j=ES5
-          ext-modern-runtime-triton/modern.engine.enterprise.uncompressed.js
+          ext-modern-runtime/modern.engine.enterprise.uncompressed.js
         and
           exclude
           -all
@@ -64,22 +64,22 @@
           concatenate
           -j=ES5
           -strip
-          ext-modern-runtime-triton/modern.engine.enterprise.uncompressed.js
+          ext-modern-runtime/modern.engine.enterprise.uncompressed.js
         and
           scss
           -appName=App
-          -imageSearchPath=runtime-modern/triton/resources
+          -imageSearchPath=runtime-modern/material/resources
           -themeName=theme
           -resourceMapBase=.
-          -output=ext-modern-runtime-triton/triton/triton-all.scss
+          -output=ext-modern-runtime/material/material-all.scss
         and
           resources
           -excludes=-all*.css
-          -out=ext-modern-runtime-triton/triton
+          -out=ext-modern-runtime/material
         and
           resources
           -model=true
-          -out=ext-modern-runtime-triton/triton
+          -out=ext-modern-runtime/material
       ]]>
     </x-compile>
   </target>
@@ -92,8 +92,8 @@
           -pwd=.
           -split=4095
           -compress
-          ext-modern-runtime-triton/triton/triton-all.scss
-          ext-modern-runtime-triton/triton/triton-all.css
+          ext-modern-runtime/material/material-all.scss
+          ext-modern-runtime/material/material-all.css
       ]]>
     </x-sencha-command>
   </target>
@@ -101,8 +101,8 @@
   <target name="watch" depends="init-cmd,build">
     <x-fashion-watch
       refName="fashion-watch"
-      inputFile="ext-modern-runtime-triton/triton/triton-all.scss"
-      outputFile="ext-modern-runtime-triton/triton/triton-all.css"
+      inputFile="ext-modern-runtime/material/material-all.scss"
+      outputFile="ext-modern-runtime/material/material-all.css"
       split="4095"
       compress="false"
       configFile="app.json"
