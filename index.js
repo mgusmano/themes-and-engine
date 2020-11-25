@@ -55,11 +55,11 @@ async function go() {
       var uglify = require("uglify-js");
       var ugly = uglify.minify({"ext": fs.readFileSync(`${inputFile}`, "utf8")})
 
-      console.log(`${chalk.green("Step 5:")} write uglify to ${outputFile}`)
+      console.log(`${chalk.green("Step 5a:")} write uglify to ${outputFile}`)
       fs.writeFileSync(outputFile, ugly.code);
 
-      //console.log(`${chalk.green("Step 5:")} delete ${inputFile}`)
-      //rimraf.sync(`${inputFile}`);
+      console.log(`${chalk.green("Step 5b:")} delete ${inputFile}`)
+      rimraf.sync(`${inputFile}`);
     }
     else {
       var inputCode = fs.readFileSync(`${inputFile}`, "utf8")
